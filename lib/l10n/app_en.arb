@@ -132,5 +132,8 @@
     "alreadyHaveAccount": "Already have an account? Login",
     "username": "Username",
     "signup": "Sign Up",
-    "signupWithGoogle": "Sign up with Google"
+    "signupWithGoogle": "Sign up with Google",
+    "loginToYourAccount": "Login to your account",
+    "dontHaveAccount": "Don't have an account? Sign Up",
+    "login": "Login"
 }

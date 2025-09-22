@@ -132,5 +132,8 @@
     "alreadyHaveAccount": "هل لديك حساب بالفعل؟ تسجيل الدخول",
     "username": "اسم المستخدم",
     "signup": "إنشاء حساب",
-    "signupWithGoogle": "إنشاء حساب باستخدام جوجل"
+    "signupWithGoogle": "إنشاء حساب باستخدام جوجل",
+    "loginToYourAccount": "تسجيل الدخول إلى حسابك",
+    "dontHaveAccount": "ليس لديك حساب؟ إنشاء حساب",
+    "login": "تسجيل الدخول"
 }
