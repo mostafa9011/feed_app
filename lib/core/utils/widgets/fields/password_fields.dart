@@ -147,7 +147,6 @@ class PasswordField extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       errorText: errorText,
-      labelText: labelText,
       hintText: hintText,
       controller: controller,
       // prefixIconPath: AssetsManager.lock,

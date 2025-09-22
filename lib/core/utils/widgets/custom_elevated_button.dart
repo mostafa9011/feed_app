@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../config/themes/app_theme.dart';
+import '../../config/themes/text_styles.dart';
 import '../extensions/context_extension.dart';
 import 'spinket_loader.dart';
 
@@ -21,8 +21,6 @@ class CustomElevatedButton extends StatelessWidget {
   final bool isLoading;
   final AlignmentGeometry buttonAlignment;
 
-  // ColorScheme colorTheme = Theme.of(RouteManager.currentContext).colorScheme;
-
   const CustomElevatedButton({
     required this.onPressed,
     required this.text,
@@ -31,7 +29,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.buttonAlignment = Alignment.center,
     this.width = 1,
     this.shadow = false,
-    this.height = 60,
+    this.height = 50,
     this.borderRadius = 16,
     this.borderColor,
     this.textColor,
@@ -68,10 +66,7 @@ class CustomElevatedButton extends StatelessWidget {
         child: Text(
           text,
           style: style ??
-              TextStyles.bold20W700(context).copyWith(
-                fontSize: context.isTablet ? 8.sp : size.sp,
-                color: textColor,
-              ),
+              TextStyles.boldW16Black(context).copyWith(color: textColor),
         ),
       ),
     );

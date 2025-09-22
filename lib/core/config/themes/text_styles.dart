@@ -1,54 +1,65 @@
-part of 'app_theme.dart';
+import 'package:flutter/material.dart';
+
+import '../../utils/extensions/context_extension.dart';
+import '../../utils/size_manager.dart';
 
 abstract class TextStyles {
-  static const String robotoFont = 'Roboto';
+  static const String plusJakartaFont = 'Plus Jakarta Sans';
 
-  static TextStyle regular12W400(BuildContext context) => TextStyle(
-        fontSize: getResponsiveFontSize(12),
-        fontWeight: FontWeight.w400,
-        color: context.colorScheme.onSurface,
-      );
-
-  static TextStyle regular14W400(BuildContext context) => TextStyle(
+  static TextStyle regular14Secondary(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(14),
         fontWeight: FontWeight.w400,
-        color: context.colorScheme.onSurface,
+        color: context.colorScheme.secondary,
+        fontFamily: plusJakartaFont,
       );
 
-  static TextStyle regular16W400(BuildContext context) => TextStyle(
+  static TextStyle regular16Grey(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(16),
         fontWeight: FontWeight.w400,
-        color: context.colorScheme.onSurface,
+        color: context.colorScheme.onSecondary,
+        fontFamily: plusJakartaFont,
       );
 
-  static TextStyle medium16W500(BuildContext context) => TextStyle(
+  static TextStyle medium12WBlack(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(12),
+        fontWeight: FontWeight.w500,
+        color: context.colorScheme.onSurface,
+        fontFamily: plusJakartaFont,
+      );
+
+  static TextStyle medium16WBlack(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(16),
         fontWeight: FontWeight.w500,
         color: context.colorScheme.onSurface,
+        fontFamily: plusJakartaFont,
       );
 
-  static TextStyle medium18W500(BuildContext context) => TextStyle(
-        fontSize: getResponsiveFontSize(18),
-        fontWeight: FontWeight.w500,
-        color: context.colorScheme.onSurface,
+  static TextStyle boldW13Secondary(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(13),
+        fontWeight: FontWeight.w700,
+        color: context.colorScheme.secondary,
+        fontFamily: plusJakartaFont,
       );
 
-  static TextStyle semiBold18W600(BuildContext context) => TextStyle(
-        fontSize: getResponsiveFontSize(18),
-        fontWeight: FontWeight.w600,
-        color: context.colorScheme.onSurface,
-      );
-
-  static TextStyle bold16W700(BuildContext context) => TextStyle(
+  static TextStyle boldW16Black(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(16),
         fontWeight: FontWeight.w700,
         color: context.colorScheme.onSurface,
+        fontFamily: plusJakartaFont,
       );
 
-  static TextStyle bold20W700(BuildContext context) => TextStyle(
-        fontSize: getResponsiveFontSize(20),
+  static TextStyle boldW18Black(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(18),
         fontWeight: FontWeight.w700,
         color: context.colorScheme.onSurface,
+        fontFamily: plusJakartaFont,
+      );
+
+  static TextStyle boldW28Black(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(28),
+        fontWeight: FontWeight.w700,
+        color: context.colorScheme.onSurface,
+        fontFamily: plusJakartaFont,
       );
 
   static double getResponsiveFontSize(double fontSize) {

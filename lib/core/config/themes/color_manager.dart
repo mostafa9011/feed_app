@@ -1,5 +1,7 @@
-import 'package:feed_app/core/config/themes/color_shades.dart';
 import 'package:flutter/material.dart';
+
+import 'color_shades.dart';
+
 part 'dark_theme.dart';
 part 'light_theme.dart';
 
@@ -12,47 +14,44 @@ class ColorManager {
       200: Color(0xFF90CAF9),
       300: Color(0xFF64B5F6),
       400: Color(0xFF42A5F5),
-      500: Color(0xFF2196F3), // default shade
+      500: Color(0xFF2194F2), // default shade
       600: Color(0xFF1E88E5),
       700: Color(0xFF1976D2),
       800: Color(0xFF1565C0),
       900: Color(0xFF0D47A1),
     },
-    defaultShadeIndex: 500,
   );
 
   // Secondary Color Shades
   static const ColorShades _secondary = ColorShades(
     shades: {
-      50: Color(0xFFFCE4EC),
-      100: Color(0xFFF8BBD0),
-      200: Color(0xFFF48FB1),
-      300: Color(0xFFF06292),
-      400: Color(0xFFEC407A),
-      500: Color(0xFFE91E63),
-      600: Color(0xFFD81B60),
-      700: Color(0xFFC2185B),
-      800: Color(0xFFAD1457),
-      900: Color(0xFF880E4F),
+      50: Color(0xFFE9EFF3),
+      100: Color(0xFFC7D5E1),
+      200: Color(0xFFA2B9CD),
+      300: Color(0xFF7D9EB8),
+      400: Color(0xFF6289A7),
+      500: Color(0xFF4A789C), // default shade
+      600: Color(0xFF436E8F),
+      700: Color(0xFF3A6381),
+      800: Color(0xFF325873),
+      900: Color(0xFF23445A),
     },
-    defaultShadeIndex: 500,
   );
 
   // Grey Color Shades
   static const ColorShades _grey = ColorShades(
     shades: {
-      50: Color(0xFFFAFAFA),
-      100: Color(0xFFF5F5F5),
-      200: Color(0xFFEEEEEE),
-      300: Color(0xFFE0E0E0),
-      400: Color(0xFFBDBDBD),
-      500: Color(0xFF9E9E9E),
-      600: Color(0xFF757575),
-      700: Color(0xFF616161),
-      800: Color(0xFF424242),
-      900: Color(0xFF212121),
+      50: Color(0xFFFAFBFD),
+      100: Color(0xFFF5F7FA),
+      200: Color(0xFFEEF2F7),
+      300: Color(0xFFE8EDF5), // default shade
+      400: Color(0xFFD0D6E0),
+      500: Color(0xFFB8C0CC),
+      600: Color(0xFFA0A9B8),
+      700: Color(0xFF8892A4),
+      800: Color(0xFF707B90),
+      900: Color(0xFF58637B),
     },
-    defaultShadeIndex: 500,
   );
 
   // White Color Shades (using Flutter's opacity variants)
@@ -67,7 +66,6 @@ class ColorManager {
       600: Colors.white60,
       700: Colors.white70,
     },
-    defaultShadeIndex: 500,
   );
 
   // Black Color Shades (using Flutter's opacity variants)
@@ -81,7 +79,6 @@ class ColorManager {
       500: Colors.black,
       600: Colors.black87,
     },
-    defaultShadeIndex: 500,
   );
 
   // Error Color Shades (Red)
@@ -98,7 +95,6 @@ class ColorManager {
       800: Color(0xFFC62828),
       900: Color(0xFFB71C1C),
     },
-    defaultShadeIndex: 500,
   );
 
   // Success Color Shades (Green)
@@ -115,7 +111,6 @@ class ColorManager {
       800: Color(0xFF2E7D32),
       900: Color(0xFF1B5E20),
     },
-    defaultShadeIndex: 500,
   );
 
   // Warning Color Shades (Amber)
@@ -132,23 +127,5 @@ class ColorManager {
       800: Color(0xFFFF8F00),
       900: Color(0xFFFF6F00),
     },
-    defaultShadeIndex: 500,
   );
-
-  // // Blue Color Shades
-  // static const ColorShades _blue = ColorShades(
-  //   shades: {
-  //     50: Color(0xFFE3F2FD),
-  //     100: Color(0xFFBBDEFB),
-  //     200: Color(0xFF90CAF9),
-  //     300: Color(0xFF64B5F6),
-  //     400: Color(0xFF42A5F5),
-  //     500: Color(0xFF2196F3),
-  //     600: Color(0xFF1E88E5),
-  //     700: Color(0xFF1976D2),
-  //     800: Color(0xFF1565C0),
-  //     900: Color(0xFF0D47A1),
-  //   },
-  //   defaultShadeIndex: 500,
-  // );
 }

@@ -26,6 +26,7 @@ class ConfigCubit extends Cubit<ConfigState> {
   void toggleTheme() {
     themeMode = themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
     emit(ThemeToggledState());
+
     CacheHelper.set(
       key: KeysManager.isDarkMode,
       value: themeMode == ThemeMode.dark,
@@ -36,7 +37,8 @@ class ConfigCubit extends Cubit<ConfigState> {
   void toggleLanguage() {
     locale =
         locale == const Locale('en') ? const Locale('ar') : const Locale('en');
-    CacheHelper.set(key: KeysManager.locale, value: locale?.languageCode);
     emit(LanguageToggledState());
+
+    CacheHelper.set(key: KeysManager.locale, value: locale?.languageCode);
   }
 }

@@ -10,7 +10,7 @@ class SpinketLoader extends StatelessWidget {
     return Center(
       child: SpinKitFadingCircle(
         color: Theme.of(context).colorScheme.primary,
-        size: 50.0.sp,
+        size: 35.0.sp,
       ),
     );
   }
