@@ -3,6 +3,7 @@ part of 'color_manager.dart';
 ThemeData get lightTheme {
   // change colors as you want...
   return ThemeData.light().copyWith(
+    scaffoldBackgroundColor: ColorManager._white.defaultShade,
     colorScheme: ColorScheme(
       brightness: Brightness.light,
       primary: ColorManager._primary.defaultShade,

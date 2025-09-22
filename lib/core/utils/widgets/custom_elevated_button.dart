@@ -7,34 +7,26 @@ import 'spinket_loader.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final void Function()? onPressed;
-  final TextStyle? style;
   final String text;
-  final double size;
   final Color? backgroundColor;
   final Color? textColor;
   final Color? borderColor;
   final double borderRadius;
   final double width;
   final double height;
-  final bool shadow;
   final bool isDisabled;
   final bool isLoading;
-  final AlignmentGeometry buttonAlignment;
 
   const CustomElevatedButton({
     required this.onPressed,
     required this.text,
     super.key,
-    this.style,
-    this.buttonAlignment = Alignment.center,
     this.width = 1,
-    this.shadow = false,
-    this.height = 50,
-    this.borderRadius = 16,
+    this.height = 48,
+    this.borderRadius = 24,
     this.borderColor,
     this.textColor,
     this.backgroundColor,
-    this.size = 16,
     this.isDisabled = false,
     this.isLoading = false,
   });
@@ -46,27 +38,24 @@ class CustomElevatedButton extends StatelessWidget {
     }
 
     return SizedBox(
-      height: context.isTablet ? 65.h : height.h,
+      height: 50.h,
       width: width == 1 ? width.sw : width.w,
       child: ElevatedButton(
-        style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
-              backgroundColor: WidgetStateProperty.all<Color>(
-                isDisabled
-                    ? Theme.of(context).colorScheme.onSecondary
-                    : backgroundColor ?? context.primaryColor,
-              ),
-              side: WidgetStatePropertyAll(
-                BorderSide(
-                  color: Colors.transparent,
-                  width: 1.5.sp,
-                ),
-              ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: isDisabled
+              ? context.colorScheme.onSecondary
+              : backgroundColor ?? context.colorScheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius.r),
+            side: BorderSide(
+              color: borderColor ?? Colors.transparent,
             ),
+          ),
+        ),
         onPressed: isDisabled ? null : onPressed,
         child: Text(
           text,
-          style: style ??
-              TextStyles.boldW16Black(context).copyWith(color: textColor),
+          style: TextStyles.boldW16Black(context).copyWith(color: textColor),
         ),
       ),
     );

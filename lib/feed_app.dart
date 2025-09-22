@@ -21,7 +21,7 @@ class FeedApp extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return ScreenUtilInit(
-            designSize: const Size(370, 700),
+            designSize: const Size(390, 844),
             minTextAdapt: true,
             splitScreenMode: true,
             builder: (_, child) => BlocBuilder<ConfigCubit, ConfigState>(
@@ -43,7 +43,7 @@ class FeedApp extends StatelessWidget {
                       darkTheme: darkTheme,
                       themeMode: ConfigCubit.themeMode,
                       navigatorKey: RouteManager.navigatorKey,
-                      initialRoute: PageName.login,
+                      initialRoute: PageName.signupScreen,
                       onGenerateRoute: RouteManager.onGenerateRoute,
                     );
                   },

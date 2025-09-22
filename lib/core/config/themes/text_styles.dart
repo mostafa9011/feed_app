@@ -13,10 +13,10 @@ abstract class TextStyles {
         fontFamily: plusJakartaFont,
       );
 
-  static TextStyle regular16Grey(BuildContext context) => TextStyle(
+  static TextStyle regular16Secodary(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(16),
         fontWeight: FontWeight.w400,
-        color: context.colorScheme.onSecondary,
+        color: context.colorScheme.secondary,
         fontFamily: plusJakartaFont,
       );
 
@@ -55,8 +55,8 @@ abstract class TextStyles {
         fontFamily: plusJakartaFont,
       );
 
-  static TextStyle boldW28Black(BuildContext context) => TextStyle(
-        fontSize: getResponsiveFontSize(28),
+  static TextStyle boldW24Black(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(24),
         fontWeight: FontWeight.w700,
         color: context.colorScheme.onSurface,
         fontFamily: plusJakartaFont,

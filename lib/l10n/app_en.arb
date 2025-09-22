@@ -127,5 +127,10 @@
     "enterOldPasswordHint": "Enter your old password",
     "enterNewPasswordHint": "Enter your new password",
     "enterConfirmPasswordHint": "Enter your confirm password",
-    "passwordRequired": "Password is required"
+    "passwordRequired": "Password is required",
+    "createAnAccount": "Create An Account",
+    "alreadyHaveAccount": "Already have an account? Login",
+    "username": "Username",
+    "signup": "Sign Up",
+    "signupWithGoogle": "Sign up with Google"
 }

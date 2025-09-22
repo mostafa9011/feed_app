@@ -127,5 +127,10 @@
     "enterOldPasswordHint": "ادخل كلمة المرور القديمة",
     "enterNewPasswordHint": "ادخل كلمة المرور الجديدة",
     "enterConfirmPasswordHint": "ادخل تاءكيد كلمة المرور",
-    "passwordRequired": "كلمة المرور مطلوبة"
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "createAnAccount": "إنشاء حساب",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟ تسجيل الدخول",
+    "username": "اسم المستخدم",
+    "signup": "إنشاء حساب",
+    "signupWithGoogle": "إنشاء حساب باستخدام جوجل"
 }

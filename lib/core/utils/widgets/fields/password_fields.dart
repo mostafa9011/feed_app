@@ -149,7 +149,6 @@ class PasswordField extends StatelessWidget {
       errorText: errorText,
       hintText: hintText,
       controller: controller,
-      // prefixIconPath: AssetsManager.lock,
       suffixIcon: IconButton(
         padding: context.isTablet
             ? EdgeInsets.symmetric(horizontal: 20.w)
@@ -167,16 +166,6 @@ class PasswordField extends StatelessWidget {
       ),
       onChanged: onChanged,
       obscureText: obscureText,
-      validator: (value) {
-        // If the field is empty and validation is required
-        if (value.isEmpty) {
-          return context.tr.passwordRequired;
-        }
-        // else if (value.length < 8) {
-        //   return context.tr.passwordLengthError;
-        // }
-        return validator?.call(value);
-      },
     );
   }
 }

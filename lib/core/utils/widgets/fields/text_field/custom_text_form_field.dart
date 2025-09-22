@@ -62,16 +62,19 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         errorText: errorText,
         hintText: capitalizeWords(hintText ?? ''),
-        hintStyle: TextStyles.regular16Grey(context),
+        hintStyle: TextStyles.regular16Secodary(context),
         filled: filled,
-        fillColor: fillColor ?? theme.inputDecorationTheme.fillColor,
+        fillColor: fillColor ?? theme.colorScheme.onSecondary,
         prefixIconConstraints: BoxConstraints(
           minWidth: 50.w,
           maxHeight: context.isTablet ? 90.h : 75.h,
         ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide.none,
+        ),
       ),
-      style: TextStyles.regular16Grey(context),
+      style: TextStyles.regular16Secodary(context),
       onChanged: (value) {
         if (onChanged != null) onChanged!(value);
       },

@@ -44,9 +44,8 @@ class ColorManager {
       50: Color(0xFFFAFBFD),
       100: Color(0xFFF5F7FA),
       200: Color(0xFFEEF2F7),
-      300: Color(0xFFE8EDF5), // default shade
       400: Color(0xFFD0D6E0),
-      500: Color(0xFFB8C0CC),
+      500: Color(0xFFE8EDF5), // default shade
       600: Color(0xFFA0A9B8),
       700: Color(0xFF8892A4),
       800: Color(0xFF707B90),
