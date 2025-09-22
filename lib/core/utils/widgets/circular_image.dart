@@ -5,21 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../constants_manager.dart';
 import '../enums/image_type.dart';
-import '../functions/kprint.dart';
 
 class CircularImage extends StatelessWidget {
   final double radius;
   final String image;
   final ImageType imageType;
   const CircularImage({
-    required this.radius, required this.image, super.key,
+    required this.radius,
+    required this.image,
+    super.key,
     this.imageType = ImageType.network,
   });
 
   @override
   Widget build(BuildContext context) {
-    kprint("Image: $image");
     // if image is from assets
     if (imageType == ImageType.assets) {
       return Container(
@@ -85,7 +86,7 @@ class CircularImage extends StatelessWidget {
             fit: BoxFit.cover,
             errorWidget: (context, url, error) {
               return Image.network(
-                "https://static.vecteezy.com/system/resources/previews/029/136/743/non_2x/error-round-line-icon-alert-attention-problem-danger-exclamation-mark-circle-circular-button-alarm-caution-warn-warning-black-line-sign-symbol-vector.jpg",
+                ConstantsManager.fakeImage,
                 fit: BoxFit.cover,
               );
             },
