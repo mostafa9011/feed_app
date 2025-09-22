@@ -3,6 +3,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../features/auth/presentation/screens/signup_screen.dart';
+import '../../../features/layout/presentation/screens/layout_screen.dart';
 import 'page_name.dart';
 
 class RouteManager {
@@ -20,6 +21,12 @@ class RouteManager {
       case PageName.signupScreen:
         return _getPageTransition(
           const SignupScreen(),
+          settings: routeSettings,
+        );
+
+      case PageName.layoutScreen:
+        return _getPageTransition(
+          const LayoutScreen(),
           settings: routeSettings,
         );
 

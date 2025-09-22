@@ -17,7 +17,7 @@ class FeedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<ConfigCubit>(),
+      create: (context) => getIt<ConfigCubit>(),
       child: Builder(
         builder: (context) {
           return ScreenUtilInit(

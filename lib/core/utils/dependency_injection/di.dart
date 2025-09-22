@@ -7,12 +7,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../api/dio_consumer.dart';
 import 'register_config_cubit.dart';
+import 'register_layout_dependencies.dart';
 
-final sl = GetIt.instance;
+final getIt = GetIt.instance;
 
 Future<void> initDependencies() async {
   // Dio consumer instance
-  sl.registerLazySingleton<DioConsumer>(
+  getIt.registerLazySingleton<DioConsumer>(
     () => DioConsumer(
       dio: Dio(),
     ),
@@ -20,7 +21,8 @@ Future<void> initDependencies() async {
 
   // Shared preferences instance
   final sharedPref = await SharedPreferences.getInstance();
-  sl.registerLazySingleton<SharedPreferences>(() => sharedPref);
-  // Register config cubit
+  getIt.registerLazySingleton<SharedPreferences>(() => sharedPref);
+
   registerConfigCubit();
+  registerLayoutDependencies();
 }
