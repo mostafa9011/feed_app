@@ -139,11 +139,7 @@ class _ToastWidgetState extends State<_ToastWidget>
                   child: Text(
                     widget.message,
                     style: TextStyles.medium16WBlack(context).copyWith(
-                      color: widget.type == ToastType.success
-                          ? context.colorScheme.tertiary
-                          : widget.type == ToastType.error
-                              ? context.colorScheme.error
-                              : context.colorScheme.onTertiary,
+                      color: context.colorScheme.onSurface,
                     ),
                   ),
                 ),

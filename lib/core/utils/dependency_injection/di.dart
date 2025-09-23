@@ -6,6 +6,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../api/dio_consumer.dart';
+import 'register_auth_dependencies.dart';
 import 'register_config_cubit.dart';
 import 'register_layout_dependencies.dart';
 
@@ -25,4 +26,5 @@ Future<void> initDependencies() async {
 
   registerConfigCubit();
   registerLayoutDependencies();
+  registerAuthDependencies();
 }

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../features/auth/presentation/screens/signup_screen.dart';
 import '../../../features/home/presentation/screens/create_post_screen.dart';
@@ -23,8 +24,10 @@ class RouteManager {
         );
 
       case PageName.signupScreen:
+        final cubit = routeSettings.arguments as AuthCubit;
+
         return _getPageTransition(
-          const SignupScreen(),
+          SignupScreen(cubit: cubit),
           settings: routeSettings,
         );
 
