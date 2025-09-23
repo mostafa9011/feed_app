@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,15 +22,17 @@ class SuggestedUsers extends StatelessWidget {
           SizedBox(height: 32.h),
           SizedBox(
             height: 200.h,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return const CustomUserCard();
-              },
-              separatorBuilder: (context, index) {
-                return SizedBox(width: 32.w);
-              },
+            child: FadeInRight(
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return const CustomUserCard();
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(width: 32.w);
+                },
+              ),
             ),
           ),
         ],

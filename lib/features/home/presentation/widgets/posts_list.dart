@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_post.dart';
@@ -11,7 +12,7 @@ class PostsList extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         childCount: 2,
         (context, index) {
-          return const CustomPost();
+          return FadeInUp(child: const CustomPost());
         },
       ),
     );

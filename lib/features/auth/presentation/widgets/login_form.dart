@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/config/routes/page_name.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
-import '../../../../core/utils/widgets/custom_elevated_button.dart';
 import '../../../../core/utils/widgets/fields/password_fields.dart';
 import '../../../../core/utils/widgets/fields/text_field/custom_text_form_field.dart';
+import 'login_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -45,13 +44,10 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(height: 24.h),
 
           // login button
-          CustomElevatedButton(
-            onPressed: () {
-              // if (!formKey.currentState!.validate()) return;
-              Navigator.pushReplacementNamed(context, PageName.layoutScreen);
-            },
-            text: context.tr.login,
-            textColor: context.colorScheme.surface,
+          LoginButton(
+            formKey: formKey,
+            emailController: emailController,
+            passwordController: passwordController,
           ),
         ],
       ),
