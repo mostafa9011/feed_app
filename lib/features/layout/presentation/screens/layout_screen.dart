@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/config/routes/page_name.dart';
 import '../../../../core/utils/dependency_injection/di.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
 import '../cubit/layout_cubit.dart';
@@ -28,7 +29,9 @@ class LayoutScreen extends StatelessWidget {
             floatingActionButton: state.currentIndex != 0
                 ? null
                 : FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, PageName.createPostScreen);
+                    },
                     child: Icon(Icons.add, color: context.colorScheme.surface),
                   ),
             bottomNavigationBar: const CustomBottomNavBar(),
