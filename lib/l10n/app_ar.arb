@@ -135,5 +135,16 @@
     "signupWithGoogle": "إنشاء حساب باستخدام جوجل",
     "loginToYourAccount": "تسجيل الدخول إلى حسابك",
     "dontHaveAccount": "ليس لديك حساب؟ إنشاء حساب",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
+    "connect": "اتصال",
+    "createPost": "إنشاء منشور",
+    "suggested": "مقترح",
+    "publish": "نشر",
+    "title": "العنوان",
+    "description": "الوصف",
+    "uploadImage": "رفع صورة",
+    "selectAnImage": "اختر صورة من جهازك",
+    "upload": "رفع",
+    "enableDarkMode": "تفعيل الوضع المظلم",
+    "preview": "معاينة"
 }

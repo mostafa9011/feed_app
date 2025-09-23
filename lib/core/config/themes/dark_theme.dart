@@ -3,7 +3,7 @@ part of 'color_manager.dart';
 ThemeData get darkTheme {
   // change colors as you want...
   return ThemeData.dark().copyWith(
-    scaffoldBackgroundColor: ColorManager._black.defaultShade,
+    scaffoldBackgroundColor: ColorManager._grey[900],
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
       primary: ColorManager._primary.defaultShade,

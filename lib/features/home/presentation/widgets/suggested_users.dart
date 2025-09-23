@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
+import '../../../../core/utils/extensions/context_extension.dart';
 import 'custom_user_card.dart';
 
 class SuggestedUsers extends StatelessWidget {
@@ -14,7 +15,7 @@ class SuggestedUsers extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Suggested',
+            context.tr.suggested,
             style: TextStyles.boldW18Black(context),
           ),
           SizedBox(height: 32.h),

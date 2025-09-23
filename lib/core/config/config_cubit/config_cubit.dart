@@ -33,12 +33,17 @@ class ConfigCubit extends Cubit<ConfigState> {
     );
   }
 
-  // toggle language
-  void toggleLanguage() {
-    locale =
-        locale == const Locale('en') ? const Locale('ar') : const Locale('en');
-    emit(LanguageToggledState());
+  // change language
+  void changeLanguage({required Locale? locale}) {
+    ConfigCubit.locale = locale;
+    emit(LanguageChangedState());
 
     CacheHelper.set(key: KeysManager.locale, value: locale?.languageCode);
+
+    // locale =
+    //     locale == const Locale('en') ? const Locale('ar') : const Locale('en');
+    // emit(LanguageChangedState());
+
+    // CacheHelper.set(key: KeysManager.locale, value: locale?.languageCode);
   }
 }

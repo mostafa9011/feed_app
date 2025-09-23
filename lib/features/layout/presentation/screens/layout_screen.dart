@@ -34,7 +34,10 @@ class LayoutScreen extends StatelessWidget {
                     },
                     child: Icon(Icons.add, color: context.colorScheme.surface),
                   ),
-            bottomNavigationBar: const CustomBottomNavBar(),
+            bottomNavigationBar: CustomBottomNavBar(
+              // use UniqueKey to force rebuild when switching index
+              key: UniqueKey(),
+            ),
           );
         },
       ),

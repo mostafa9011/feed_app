@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../core/config/routes/page_name.dart';
 import '../../../../core/config/themes/text_styles.dart';
 import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
@@ -47,10 +48,19 @@ class _CustomUploadImageState extends State<CustomUploadImage> {
                       Row(
                         children: [
                           const Spacer(),
-                          Image.file(
-                            File(image!.path),
-                            fit: BoxFit.cover,
-                            height: 130.h,
+                          InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                PageName.imagePreviewScreen,
+                                arguments: File(image!.path),
+                              );
+                            },
+                            child: Image.file(
+                              File(image!.path),
+                              fit: BoxFit.cover,
+                              height: 130.h,
+                            ),
                           ),
                           const Spacer(),
                           IconButton(
@@ -65,14 +75,16 @@ class _CustomUploadImageState extends State<CustomUploadImage> {
                           ),
                         ],
                       )
+
+                    // if image is not selected
                     else ...[
                       Text(
-                        "Upload Image",
+                        context.tr.uploadImage,
                         style: TextStyles.boldW18Black(context),
                       ),
                       SizedBox(height: 8.h),
                       Text(
-                        "Select an image from your device",
+                        context.tr.selectAnImage,
                         style: TextStyles.regular14Secondary(context).copyWith(
                           color: context.colorScheme.onSurface,
                         ),
@@ -94,8 +106,10 @@ class _CustomUploadImageState extends State<CustomUploadImage> {
                           backgroundColor: context.colorScheme.onSecondary,
                         ),
                         child: Text(
-                          'Upload',
-                          style: TextStyles.boldW16Black(context),
+                          context.tr.upload,
+                          style: TextStyles.boldW16Black(context).copyWith(
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ],

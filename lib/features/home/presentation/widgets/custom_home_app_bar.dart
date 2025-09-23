@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
+import '../../../../core/utils/extensions/context_extension.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({super.key});
@@ -16,7 +17,7 @@ class CustomHomeAppBar extends StatelessWidget {
           ),
           const Spacer(),
           Text(
-            'Connect',
+            context.tr.connect,
             style: TextStyles.boldW18Black(context),
           ),
           const Spacer(),

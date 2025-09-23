@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
+import '../../../../core/utils/extensions/context_extension.dart';
 import '../../../../core/utils/widgets/custom_elevated_button.dart';
 import '../../data/form_data/post_form_data.dart';
+import '../widgets/hashtags_list.dart';
 import '../widgets/post_form.dart';
 
 class CreatePostScreen extends StatefulWidget {
@@ -27,14 +29,25 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Create Post',
+          context.tr.createPost,
           style: TextStyles.boldW18Black(context),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
-        child: PostForm(
-          formData: formData,
+
+        // post form
+        child: Column(
+          children: [
+            // post form
+            PostForm(
+              formData: formData,
+            ),
+            SizedBox(height: 32.h),
+
+            // hashtags
+            const HashtagsList(),
+          ],
         ),
       ),
       bottomNavigationBar: Padding(
@@ -43,7 +56,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
           onPressed: () {
             if (!formData.formKey.currentState!.validate()) return;
           },
-          text: 'Publish',
+          text: context.tr.publish,
         ),
       ),
     );

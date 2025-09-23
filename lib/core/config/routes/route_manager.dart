@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../features/auth/presentation/screens/signup_screen.dart';
 import '../../../features/home/presentation/screens/create_post_screen.dart';
+import '../../../features/home/presentation/screens/image_preview_screen.dart';
 import '../../../features/layout/presentation/screens/layout_screen.dart';
 import 'page_name.dart';
 
@@ -34,6 +37,14 @@ class RouteManager {
       case PageName.createPostScreen:
         return _getPageTransition(
           const CreatePostScreen(),
+          settings: routeSettings,
+        );
+
+      case PageName.imagePreviewScreen:
+        final imageFile = routeSettings.arguments as File;
+
+        return _getPageTransition(
+          ImagePreviewScreen(imageFile: imageFile),
           settings: routeSettings,
         );
 

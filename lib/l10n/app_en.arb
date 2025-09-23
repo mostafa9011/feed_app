@@ -135,5 +135,16 @@
     "signupWithGoogle": "Sign up with Google",
     "loginToYourAccount": "Login to your account",
     "dontHaveAccount": "Don't have an account? Sign Up",
-    "login": "Login"
+    "login": "Login",
+    "connect": "Connect",
+    "createPost": "Create Post",
+    "suggested": "Suggested",
+    "publish": "Publish",
+    "title": "Title",
+    "description": "Description",
+    "uploadImage": "Upload Image",
+    "selectAnImage": "Select an image from your device",
+    "upload": "Upload",
+    "enableDarkMode": "Enable Dark Mode",
+    "preview": "Preview"
 }

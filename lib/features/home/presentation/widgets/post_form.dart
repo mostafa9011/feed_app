@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/utils/extensions/context_extension.dart';
 import '../../../../core/utils/widgets/fields/text_field/custom_text_form_field.dart';
 import '../../data/form_data/post_form_data.dart';
 import 'custom_upload_image.dart';
@@ -22,12 +23,12 @@ class _PostFormState extends State<PostForm> {
         children: [
           SizedBox(height: 16.h),
           CustomTextFormField(
-            hintText: 'Title',
+            hintText: context.tr.title,
             controller: widget.formData.titleController,
           ),
           SizedBox(height: 32.h),
           CustomTextFormField(
-            hintText: 'Description',
+            hintText: context.tr.description,
             minLines: 4,
             controller: widget.formData.descriptionController,
           ),

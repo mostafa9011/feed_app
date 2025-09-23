@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../home/presentation/screens/home_screen.dart';
+import '../screens/profile_screen.dart';
 
 part 'layout_state.dart';
 
@@ -12,7 +13,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     const HomeScreen(),
     const Center(child: Text('Friends')),
     const Center(child: Text('Notifications')),
-    const Center(child: Text('Profile')),
+    const ProfileScreen(),
   ];
 
   void changeIndex(int index) {
