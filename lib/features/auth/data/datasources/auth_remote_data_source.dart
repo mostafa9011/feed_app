@@ -13,6 +13,8 @@ abstract class AuthRemoteDataSource {
     required String email,
     required String password,
   });
+
+  Future<UserModel> signInWithGoogle();
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -48,6 +50,24 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       uid: user!.uid,
       email: user.email!,
       username: username,
+      createdAt: DateTime.now(),
+    );
+
+    await FirestoreService.saveUser(userModel);
+
+    return userModel;
+  }
+
+  @override
+  Future<UserModel> signInWithGoogle() async {
+    final user = await FirebaseAuthService.signInWithGoogle();
+
+    // Save additional user info in Firestore
+
+    final userModel = UserModel(
+      uid: user!.uid,
+      email: user.email!,
+      username: user.displayName ?? user.email!.split('@')[0],
       createdAt: DateTime.now(),
     );
 

@@ -16,6 +16,8 @@ abstract class AuthRepository {
     required String email,
     required String password,
   });
+
+  Future<Either<Failure, UserModel>> signInWithGoogle();
 }
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -51,6 +53,15 @@ class AuthRepositoryImpl implements AuthRepository {
           email: email,
           password: password,
         );
+      },
+    );
+  }
+
+  @override
+  Future<Either<Failure, UserModel>> signInWithGoogle() async {
+    return safeExecute(
+      request: () {
+        return remoteDataSource.signInWithGoogle();
       },
     );
   }

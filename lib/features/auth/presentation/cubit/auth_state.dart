@@ -8,6 +8,9 @@ enum AuthStatus {
   signupLoading,
   signupSuccess,
   signupFailure,
+  signinWithGoogleLoading,
+  signinWithGoogleSuccess,
+  signinWithGoogleFailure
 }
 
 @immutable
@@ -40,4 +43,10 @@ class AuthState {
   bool get isSignupLoading => status == AuthStatus.signupLoading;
   bool get isSignupSuccess => status == AuthStatus.signupSuccess;
   bool get isSignupFailure => status == AuthStatus.signupFailure;
+  bool get isSigninWithGoogleLoading =>
+      status == AuthStatus.signinWithGoogleLoading;
+  bool get isSigninWithGoogleSuccess =>
+      status == AuthStatus.signinWithGoogleSuccess;
+  bool get isSigninWithGoogleFailure =>
+      status == AuthStatus.signinWithGoogleFailure;
 }
