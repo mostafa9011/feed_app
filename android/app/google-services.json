@@ -12,7 +12,12 @@
           "package_name": "com.example.feed_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1065371829372-4e3efplbv3b34fcodfcb55hrhpfi52cj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDtPjevVV06iABrNma_Nk52ZpXs3TLtdYY"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065371829372-4e3efplbv3b34fcodfcb55hrhpfi52cj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1065371829372-5hv9e9hb5i3qiuojap4mlp0nlf5p7go8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.feedApp"
+              }
+            }
+          ]
         }
       }
     }
