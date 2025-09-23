@@ -90,8 +90,6 @@ class CircularImage extends StatelessWidget {
                 fit: BoxFit.cover,
               );
             },
-            placeholder: (context, url) =>
-                const CircularProgressIndicator.adaptive(),
           ),
         ),
       );

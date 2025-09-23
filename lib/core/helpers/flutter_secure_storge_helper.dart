@@ -4,13 +4,15 @@ class FlutterSecureStorageHelper {
   static late FlutterSecureStorage storage;
   static init() {
     storage = const FlutterSecureStorage(
-        aOptions: AndroidOptions(encryptedSharedPreferences: true),
-        iOptions:
-            IOSOptions(accessibility: KeychainAccessibility.first_unlock),);
+      aOptions: AndroidOptions(encryptedSharedPreferences: true),
+      iOptions: IOSOptions(accessibility: KeychainAccessibility.first_unlock),
+    );
   }
 
-  static Future<void> setData(
-      {required String key, required String value,}) async {
+  static Future<void> setData({
+    required String key,
+    required String value,
+  }) async {
     await storage.write(key: key, value: value);
   }
 

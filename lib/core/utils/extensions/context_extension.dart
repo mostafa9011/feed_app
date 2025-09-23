@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 import '../size_manager.dart';
 
-
 /// extension on context
 extension ContextExtension on BuildContext {
   bool get isMobile => DeviceTypeEnum.mobile.isMobile;

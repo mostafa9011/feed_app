@@ -1,4 +1,3 @@
-
 // image type
 enum ImageType {
   network,

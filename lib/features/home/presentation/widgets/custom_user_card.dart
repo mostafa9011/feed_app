@@ -2,24 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
-import '../../../../core/utils/constants_manager.dart';
 import '../../../../core/utils/widgets/circular_image.dart';
+import '../../domain/entities/suggested_user_entity.dart';
 
 class CustomUserCard extends StatelessWidget {
-  const CustomUserCard({super.key});
+  final SuggestedUserEntity user;
+
+  const CustomUserCard({required this.user, super.key});
 
   @override
   Widget build(BuildContext context) {
     return FittedBox(
       child: Column(
         children: [
-          const CircularImage(
+          CircularImage(
             radius: 64,
-            image: ConstantsManager.fakeImage,
+            image: user.image,
           ),
           SizedBox(height: 16.h),
-          const _customCardInfo(text: 'Mostafa '),
-          const _customCardInfo(text: '@dev.com'),
+          _customCardInfo(text: user.name),
+          _customCardInfo(text: user.username),
         ],
       ),
     );

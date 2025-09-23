@@ -1,5 +1,5 @@
 abstract class EndPoints {
-  static const String baseUrl = "https://";
+  static const String baseUrl = "https://dummyjson.com";
 
-  static const String login = "/login";
+  static const String suggestedUsers = "/users?limit=5";
 }
