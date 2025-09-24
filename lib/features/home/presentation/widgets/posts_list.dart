@@ -55,6 +55,7 @@ class PostsList extends StatelessWidget {
                 enabled: state.isGetPostsLoading,
                 child: FadeInUp(
                   child: CustomPost(
+                    key: Key(state.posts?[index].id ?? index.toString()),
                     post: state.posts?[index] ?? PostModel.dummy(),
                   ),
                 ),

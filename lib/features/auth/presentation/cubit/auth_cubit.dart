@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/helpers/cache_helper.dart';
+import '../../../../core/utils/keys_manager.dart';
 import '../../data/models/user_model.dart';
 import '../../data/repositories/auth_repository.dart';
 
@@ -29,6 +31,9 @@ class AuthCubit extends Cubit<AuthState> {
       ),
       (user) {
         emit(state.copyWith(status: AuthStatus.loginSuccess, user: user));
+
+        // cache islogged in
+        CacheHelper.set(key: KeysManager.isLoggedIn, value: true);
       },
     );
   }
@@ -55,6 +60,9 @@ class AuthCubit extends Cubit<AuthState> {
       ),
       (user) {
         emit(state.copyWith(status: AuthStatus.signupSuccess, user: user));
+
+        // cache islogged in
+        CacheHelper.set(key: KeysManager.isLoggedIn, value: true);
       },
     );
   }
@@ -78,6 +86,9 @@ class AuthCubit extends Cubit<AuthState> {
             user: user,
           ),
         );
+
+        // cache islogged in
+        CacheHelper.set(key: KeysManager.isLoggedIn, value: true);
       },
     );
   }

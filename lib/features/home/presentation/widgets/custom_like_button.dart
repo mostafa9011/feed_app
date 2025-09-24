@@ -32,7 +32,7 @@ class _CustomLikeButtonState extends State<CustomLikeButton> {
         // rollback if steate is failure
         if (state.isToggleLikeFailure) {
           setState(() {
-            specificLikes = widget.post.likes;
+            specificLikes = List<String>.from(widget.post.likes);
           });
         }
       },
