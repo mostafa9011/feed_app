@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 import '../../../../core/services/firebase_auth_service.dart';
 import '../../../../core/services/firestore_service.dart';
 import '../models/user_model.dart';
@@ -64,8 +66,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
     // Save additional user info in Firestore
 
+    if (user == null) throw DioException(requestOptions: RequestOptions());
+
     final userModel = UserModel(
-      uid: user!.uid,
+      uid: user.uid,
       email: user.email!,
       username: user.displayName ?? user.email!.split('@')[0],
       createdAt: DateTime.now(),
