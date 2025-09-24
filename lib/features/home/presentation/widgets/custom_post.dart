@@ -43,7 +43,7 @@ class CustomPost extends StatelessWidget {
         ),
         SizedBox(height: 22.h),
 
-        // favorite button
+        // like button
         CustomLikeButton(post: post),
         SizedBox(height: 32.h),
       ],

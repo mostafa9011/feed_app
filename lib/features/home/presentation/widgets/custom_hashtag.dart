@@ -18,7 +18,9 @@ class CustomHashtag extends StatelessWidget {
       ),
       child: Text(
         "#design",
-        style: TextStyles.medium16WBlack(context),
+        style: TextStyles.medium16WBlack(context).copyWith(
+          color: Colors.black,
+        ),
       ),
     );
   }

@@ -6,6 +6,7 @@ import '../../../../core/config/themes/text_styles.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
 import '../../data/form_data/post_form_data.dart';
 import '../cubit/home_cubit.dart';
+import '../widgets/banner_ad_widget.dart';
 import '../widgets/create_post_button.dart';
 import '../widgets/hashtags_list.dart';
 import '../widgets/post_form.dart';
@@ -53,6 +54,10 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
 
                 // hashtags
                 const HashtagsList(),
+
+                SizedBox(height: 32.h),
+                // ad widget
+                const BannerAdWidget(),
               ],
             ),
           ),

@@ -43,7 +43,7 @@ class FeedApp extends StatelessWidget {
                       darkTheme: darkTheme,
                       themeMode: ConfigCubit.themeMode,
                       navigatorKey: RouteManager.navigatorKey,
-                      initialRoute: PageName.layoutScreen,
+                      initialRoute: PageName.loginScreen,
                       onGenerateRoute: RouteManager.onGenerateRoute,
                     );
                   },
