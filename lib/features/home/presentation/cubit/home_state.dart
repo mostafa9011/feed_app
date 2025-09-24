@@ -5,6 +5,10 @@ enum HomeStatus {
   getSuggestedUsersLoading,
   getSuggestedUsersSuccess,
   getSuggestedUsersFailure,
+
+  createPostLoading,
+  createPostSuccess,
+  createPostFailure,
 }
 
 @immutable
@@ -37,4 +41,8 @@ class HomeState {
       status == HomeStatus.getSuggestedUsersSuccess;
   bool get isGetSuggestedUsersFailure =>
       status == HomeStatus.getSuggestedUsersFailure;
+
+  bool get isCreatePostLoading => status == HomeStatus.createPostLoading;
+  bool get isCreatePostSuccess => status == HomeStatus.createPostSuccess;
+  bool get isCreatePostFailure => status == HomeStatus.createPostFailure;
 }

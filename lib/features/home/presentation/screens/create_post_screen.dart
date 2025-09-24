@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
+import '../../../../core/utils/dependency_injection/di.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
-import '../../../../core/utils/widgets/custom_elevated_button.dart';
 import '../../data/form_data/post_form_data.dart';
+import '../cubit/home_cubit.dart';
+import '../widgets/create_post_button.dart';
 import '../widgets/hashtags_list.dart';
 import '../widgets/post_form.dart';
 
@@ -26,37 +29,44 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          context.tr.createPost,
-          style: TextStyles.boldW18Black(context),
+    return BlocProvider(
+      create: (context) => getIt<HomeCubit>(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            context.tr.createPost,
+            style: TextStyles.boldW18Black(context),
+          ),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0).r,
 
-        // post form
-        child: Column(
-          children: [
-            // post form
-            PostForm(
+          // post form
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // post form
+                PostForm(
+                  formData: formData,
+                ),
+                SizedBox(height: 32.h),
+
+                // hashtags
+                const HashtagsList(),
+              ],
+            ),
+          ),
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32).r,
+
+          // create post button
+          child: Container(
+            color: context.colorScheme.onSecondary,
+            child: CreatePostButton(
               formData: formData,
             ),
-            SizedBox(height: 32.h),
-
-            // hashtags
-            const HashtagsList(),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32).r,
-        child: CustomElevatedButton(
-          onPressed: () {
-            if (!formData.formKey.currentState!.validate()) return;
-          },
-          text: context.tr.publish,
+          ),
         ),
       ),
     );

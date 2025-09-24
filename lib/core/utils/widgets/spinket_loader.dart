@@ -7,10 +7,13 @@ class SpinketLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SpinKitFadingCircle(
-        color: Theme.of(context).colorScheme.primary,
-        size: 35.0.sp,
+    return SizedBox(
+      height: 50.h,
+      child: Center(
+        child: SpinKitFadingCircle(
+          color: Theme.of(context).colorScheme.primary,
+          size: 35.0.sp,
+        ),
       ),
     );
   }
