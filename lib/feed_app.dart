@@ -8,7 +8,9 @@ import 'core/config/config_cubit/config_cubit.dart';
 import 'core/config/routes/page_name.dart';
 import 'core/config/routes/route_manager.dart';
 import 'core/config/themes/color_manager.dart';
+import 'core/helpers/cache_helper.dart';
 import 'core/utils/dependency_injection/di.dart';
+import 'core/utils/keys_manager.dart';
 import 'core/utils/size_manager.dart';
 
 class FeedApp extends StatelessWidget {
@@ -43,7 +45,7 @@ class FeedApp extends StatelessWidget {
                       darkTheme: darkTheme,
                       themeMode: ConfigCubit.themeMode,
                       navigatorKey: RouteManager.navigatorKey,
-                      initialRoute: PageName.loginScreen,
+                      initialRoute: _getSpecificRoute(),
                       onGenerateRoute: RouteManager.onGenerateRoute,
                     );
                   },
@@ -54,5 +56,12 @@ class FeedApp extends StatelessWidget {
         },
       ),
     );
+  }
+
+  String _getSpecificRoute() {
+    final bool isLoggedIn =
+        CacheHelper.getBoolData(KeysManager.isLoggedIn) ?? false;
+
+    return isLoggedIn ? PageName.layoutScreen : PageName.loginScreen;
   }
 }

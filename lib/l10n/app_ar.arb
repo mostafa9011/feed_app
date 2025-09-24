@@ -146,5 +146,6 @@
     "selectAnImage": "اختر صورة من جهازك",
     "upload": "رفع",
     "enableDarkMode": "تفعيل الوضع المظلم",
-    "preview": "معاينة"
+    "preview": "معاينة",
+    "signOut": "تسجيل الخروج"
 }

@@ -146,5 +146,6 @@
     "selectAnImage": "Select an image from your device",
     "upload": "Upload",
     "enableDarkMode": "Enable Dark Mode",
-    "preview": "Preview"
+    "preview": "Preview",
+    "signOut": "Sign Out"
 }
