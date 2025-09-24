@@ -23,4 +23,9 @@ class HomeRepositoryImpl implements HomeRepository {
       request: () => _homeRemoteDataSource.createPost(post: post),
     );
   }
+
+  @override
+  Future<Either<Failure, List<PostModel>>> getPosts() async {
+    return safeExecute(request: _homeRemoteDataSource.getPosts);
+  }
 }

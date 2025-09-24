@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
-import '../../../../core/utils/dependency_injection/di.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
 import '../../data/form_data/post_form_data.dart';
 import '../cubit/home_cubit.dart';
@@ -12,7 +11,8 @@ import '../widgets/hashtags_list.dart';
 import '../widgets/post_form.dart';
 
 class CreatePostScreen extends StatefulWidget {
-  const CreatePostScreen({super.key});
+  final HomeCubit cubit;
+  const CreatePostScreen({required this.cubit, super.key});
 
   @override
   State<CreatePostScreen> createState() => _CreatePostScreenState();
@@ -29,8 +29,8 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<HomeCubit>(),
+    return BlocProvider.value(
+      value: widget.cubit,
       child: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -61,11 +61,8 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32).r,
 
           // create post button
-          child: Container(
-            color: context.colorScheme.onSecondary,
-            child: CreatePostButton(
-              formData: formData,
-            ),
+          child: CreatePostButton(
+            formData: formData,
           ),
         ),
       ),

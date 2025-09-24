@@ -9,6 +9,8 @@ abstract class HomeRemoteDataSource {
   Future<List<SuggestedUserEntity>> getSuggestedUsers();
 
   Future<void> createPost({required PostModel post});
+
+  Future<List<PostModel>> getPosts();
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -31,5 +33,10 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   @override
   Future<void> createPost({required PostModel post}) async {
     await FirestoreService.createPost(post);
+  }
+
+  @override
+  Future<List<PostModel>> getPosts() async {
+    return await FirestoreService.getPosts();
   }
 }

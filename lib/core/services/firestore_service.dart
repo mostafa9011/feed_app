@@ -45,8 +45,11 @@ class FirestoreService {
   }
 
   // Get Posts stream
-  static Stream<QuerySnapshot<PostModel>> getPosts() {
-    return postsRef.orderBy("createdAt", descending: true).snapshots();
+  static Future<List<PostModel>> getPosts() async {
+    final snapshot =
+        await postsRef.orderBy("createdAt", descending: true).get();
+
+    return snapshot.docs.map((doc) => doc.data()).toList();
   }
 
   // Toggle Like

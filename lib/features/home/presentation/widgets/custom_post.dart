@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
+import '../../data/models/post_model.dart';
 import 'custom_favorite_button.dart';
 
 class CustomPost extends StatelessWidget {
-  const CustomPost({super.key});
+  final PostModel post;
+  const CustomPost({required this.post, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,25 +20,23 @@ class CustomPost extends StatelessWidget {
           height: 200.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
-            image: const DecorationImage(
+            image: DecorationImage(
               fit: BoxFit.cover,
-              image: CachedNetworkImageProvider(
-                'https://picsum.photos/seed/1/600/400',
-              ),
+              image: CachedNetworkImageProvider(post.imageUrl),
             ),
           ),
         ),
         SizedBox(height: 16.h),
 
         Text(
-          'Morning hike',
+          post.title,
           style: TextStyles.boldW18Black(context),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         SizedBox(height: 4.h),
         Text(
-          'Enjoying the fresh air and stunning views on my morning hike. Nature is the best therapy!',
+          post.description,
           style: TextStyles.regular14Secondary(context),
           maxLines: 3,
           overflow: TextOverflow.ellipsis,
@@ -44,7 +44,7 @@ class CustomPost extends StatelessWidget {
         SizedBox(height: 22.h),
 
         // favorite button
-        const CustomFavoriteButton(),
+        CustomFavoriteButton(likes: post.likes),
         SizedBox(height: 32.h),
       ],
     );

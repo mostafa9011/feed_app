@@ -73,9 +73,33 @@ class HomeCubit extends Cubit<HomeState> {
           errorMessage: failure.message,
         ),
       ),
-      (success) => emit(
+      (success) {
+        // add post to list
+        emit(
+          state.copyWith(
+            status: HomeStatus.createPostSuccess,
+            posts: [post, ...state.posts!],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> getPosts() async {
+    emit(state.copyWith(status: HomeStatus.getPostsLoading));
+
+    final result = await _homeRepository.getPosts();
+    result.fold(
+      (failure) => emit(
         state.copyWith(
-          status: HomeStatus.createPostSuccess,
+          status: HomeStatus.getPostsFailure,
+          errorMessage: failure.message,
+        ),
+      ),
+      (posts) => emit(
+        state.copyWith(
+          status: HomeStatus.getPostsSuccess,
+          posts: posts,
         ),
       ),
     );

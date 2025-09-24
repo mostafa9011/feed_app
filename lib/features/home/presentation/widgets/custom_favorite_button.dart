@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/config/themes/text_styles.dart';
 
 class CustomFavoriteButton extends StatelessWidget {
-  const CustomFavoriteButton({super.key});
+  final List<String> likes;
+  const CustomFavoriteButton({required this.likes, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CustomFavoriteButton extends StatelessWidget {
         ),
         SizedBox(width: 4.w),
         Text(
-          '24',
+          likes.length.toString(),
           style: TextStyles.boldW16Black(context).copyWith(
             color: Theme.of(context).colorScheme.secondary,
           ),

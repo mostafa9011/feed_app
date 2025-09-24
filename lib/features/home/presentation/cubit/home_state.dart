@@ -9,6 +9,10 @@ enum HomeStatus {
   createPostLoading,
   createPostSuccess,
   createPostFailure,
+
+  getPostsLoading,
+  getPostsSuccess,
+  getPostsFailure,
 }
 
 @immutable
@@ -16,22 +20,26 @@ class HomeState {
   final HomeStatus status;
   final String? errorMessage;
   final List<SuggestedUserEntity>? suggestedUsers;
+  final List<PostModel>? posts;
 
   const HomeState({
     required this.status,
     this.errorMessage,
     this.suggestedUsers,
+    this.posts,
   });
 
   HomeState copyWith({
     required HomeStatus status,
     String? errorMessage,
     List<SuggestedUserEntity>? suggestedUsers,
+    List<PostModel>? posts,
   }) {
     return HomeState(
       status: status,
       errorMessage: errorMessage ?? this.errorMessage,
       suggestedUsers: suggestedUsers ?? this.suggestedUsers,
+      posts: posts ?? this.posts,
     );
   }
 
@@ -45,4 +53,8 @@ class HomeState {
   bool get isCreatePostLoading => status == HomeStatus.createPostLoading;
   bool get isCreatePostSuccess => status == HomeStatus.createPostSuccess;
   bool get isCreatePostFailure => status == HomeStatus.createPostFailure;
+
+  bool get isGetPostsLoading => status == HomeStatus.getPostsLoading;
+  bool get isGetPostsSuccess => status == HomeStatus.getPostsSuccess;
+  bool get isGetPostsFailure => status == HomeStatus.getPostsFailure;
 }

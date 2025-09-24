@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../../core/utils/constants_manager.dart';
+
 class PostModel {
   String? id;
   String title;
@@ -42,5 +44,17 @@ class PostModel {
       "likes": likes,
       "createdAt": createdAt ?? FieldValue.serverTimestamp(),
     };
+  }
+
+  // dummy post for testing
+  factory PostModel.dummy() {
+    return PostModel(
+      title: "title",
+      description: "description",
+      imageUrl: ConstantsManager.fakeImage,
+      userId: "userId",
+      likes: ["likes"],
+      createdAt: DateTime.now(),
+    );
   }
 }

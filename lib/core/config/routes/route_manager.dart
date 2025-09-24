@@ -6,6 +6,7 @@ import 'package:page_transition/page_transition.dart';
 import '../../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../features/auth/presentation/screens/signup_screen.dart';
+import '../../../features/home/presentation/cubit/home_cubit.dart';
 import '../../../features/home/presentation/screens/create_post_screen.dart';
 import '../../../features/home/presentation/screens/image_preview_screen.dart';
 import '../../../features/layout/presentation/screens/layout_screen.dart';
@@ -38,8 +39,10 @@ class RouteManager {
         );
 
       case PageName.createPostScreen:
+        final cubit = routeSettings.arguments as HomeCubit;
+
         return _getPageTransition(
-          const CreatePostScreen(),
+          CreatePostScreen(cubit: cubit),
           settings: routeSettings,
         );
 

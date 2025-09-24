@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/config/routes/page_name.dart';
 import '../../../../core/utils/dependency_injection/di.dart';
 import '../../../../core/utils/extensions/context_extension.dart';
+import '../../../home/presentation/cubit/home_cubit.dart';
 import '../cubit/layout_cubit.dart';
 import '../widgets/custom_bottom_nav_bar.dart';
 
@@ -13,8 +14,17 @@ class LayoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<LayoutCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<LayoutCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<HomeCubit>()
+            ..getSuggestedUsers()
+            ..getPosts(),
+        ),
+      ],
       child: BlocBuilder<LayoutCubit, LayoutState>(
         builder: (context, state) {
           final cubit = context.read<LayoutCubit>();
@@ -30,12 +40,17 @@ class LayoutScreen extends StatelessWidget {
                 ? null
                 : FloatingActionButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, PageName.createPostScreen);
+                      Navigator.pushNamed(
+                        context,
+                        PageName.createPostScreen,
+                        arguments: context.read<HomeCubit>(),
+                      );
                     },
                     child: Icon(Icons.add, color: context.colorScheme.surface),
                   ),
             bottomNavigationBar: CustomBottomNavBar(
               // use UniqueKey to force rebuild when switching index
+              // because not using bloc builder inside CustomBottomNavBar
               key: UniqueKey(),
             ),
           );
