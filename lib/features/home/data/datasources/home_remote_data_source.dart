@@ -11,6 +11,11 @@ abstract class HomeRemoteDataSource {
   Future<void> createPost({required PostModel post});
 
   Future<List<PostModel>> getPosts();
+
+  Future<void> toggleLike({
+    required String postId,
+    required String userId,
+  });
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -38,5 +43,13 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   @override
   Future<List<PostModel>> getPosts() async {
     return await FirestoreService.getPosts();
+  }
+
+  @override
+  Future<void> toggleLike({
+    required String postId,
+    required String userId,
+  }) async {
+    await FirestoreService.toggleLike(postId: postId, userId: userId);
   }
 }

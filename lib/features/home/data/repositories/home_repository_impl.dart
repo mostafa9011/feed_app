@@ -28,4 +28,15 @@ class HomeRepositoryImpl implements HomeRepository {
   Future<Either<Failure, List<PostModel>>> getPosts() async {
     return safeExecute(request: _homeRemoteDataSource.getPosts);
   }
+
+  @override
+  Future<Either<Failure, void>> toggleLike({
+    required String postId,
+    required String userId,
+  }) async {
+    return safeExecute(
+      request: () =>
+          _homeRemoteDataSource.toggleLike(postId: postId, userId: userId),
+    );
+  }
 }

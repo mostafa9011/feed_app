@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/config/themes/text_styles.dart';
 import '../../data/models/post_model.dart';
-import 'custom_favorite_button.dart';
+import 'custom_like_button.dart';
 
 class CustomPost extends StatelessWidget {
   final PostModel post;
@@ -44,7 +44,7 @@ class CustomPost extends StatelessWidget {
         SizedBox(height: 22.h),
 
         // favorite button
-        CustomFavoriteButton(likes: post.likes),
+        CustomLikeButton(post: post),
         SizedBox(height: 32.h),
       ],
     );

@@ -13,6 +13,10 @@ enum HomeStatus {
   getPostsLoading,
   getPostsSuccess,
   getPostsFailure,
+
+  toggleLikeLoading,
+  toggleLikeSuccess,
+  toggleLikeFailure,
 }
 
 @immutable
@@ -57,4 +61,8 @@ class HomeState {
   bool get isGetPostsLoading => status == HomeStatus.getPostsLoading;
   bool get isGetPostsSuccess => status == HomeStatus.getPostsSuccess;
   bool get isGetPostsFailure => status == HomeStatus.getPostsFailure;
+
+  bool get isToggleLikeLoading => status == HomeStatus.toggleLikeLoading;
+  bool get isToggleLikeSuccess => status == HomeStatus.toggleLikeSuccess;
+  bool get isToggleLikeFailure => status == HomeStatus.toggleLikeFailure;
 }

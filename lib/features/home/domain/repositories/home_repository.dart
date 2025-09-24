@@ -10,4 +10,9 @@ abstract class HomeRepository {
   Future<Either<Failure, void>> createPost({required PostModel post});
 
   Future<Either<Failure, List<PostModel>>> getPosts();
+
+  Future<Either<Failure, void>> toggleLike({
+    required String postId,
+    required String userId,
+  });
 }

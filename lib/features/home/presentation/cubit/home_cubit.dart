@@ -104,4 +104,27 @@ class HomeCubit extends Cubit<HomeState> {
       ),
     );
   }
+
+  Future<void> toggleLike({
+    required String postId,
+    required String userId,
+  }) async {
+    emit(state.copyWith(status: HomeStatus.toggleLikeLoading));
+
+    final result =
+        await _homeRepository.toggleLike(postId: postId, userId: userId);
+    result.fold(
+      (failure) => emit(
+        state.copyWith(
+          status: HomeStatus.toggleLikeFailure,
+          errorMessage: failure.message,
+        ),
+      ),
+      (success) => emit(
+        state.copyWith(
+          status: HomeStatus.toggleLikeSuccess,
+        ),
+      ),
+    );
+  }
 }
